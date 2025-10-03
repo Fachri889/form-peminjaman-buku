@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peminjaman Buku</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container-main">
+        
+        <div class="top-nav">
+            <a href="login.html" class="btn-login">LOGIN</a>
+            <a href="register.html" class="btn-register">DAFTAR</a>
+        </div>
+
+        <h1 class="header-main">FORM Peminjaman Buku</h1>
+
+        <div class="loan-form-container">
+            <form id="pinjam-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
+                <label for="mapei">Judul Buku/Mapel:</label>
+                <input type="text" id="mapei" required>
+                <label for="tanggal-pinjam">Tanggal Pinjam:</label>
+                <input type="date" id="tanggal-pinjam" required>
+                <label for="tanggal-kembali">Tanggal Kembali:</label>
+                <input type="date" id="tanggal-kembali" required>
+                
+                <button type="submit">PINJAM</button>
+            </form>
+        </div>
+
+        <h1 class="header-main">Data Peminjaman</h1>
+        <div class="data-table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nama</th>
+                        <th>Mapei</th>
+                        <th>Tanggal Pinjaman</th>
+                        <th>Tanggal Kembali</th>
+                    </tr>
+                </thead>
+                <tbody id="data-pinjaman-body">
+                    <tr><td>Ridho</td><td>Matematika</td><td>2025-01-01</td><td>2025-01-08</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('pinjam-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            
+            const name = document.getElementById('name').value;
+            const mapei = document.getElementById('mapei').value;
+            const tanggalPinjam = document.getElementById('tanggal-pinjam').value;
+            const tanggalKembali = document.getElementById('tanggal-kembali').value;
+
+            
+            const tableBody = document.getElementById('data-pinjaman-body');
+            const newRow = tableBody.insertRow(0); 
+            newRow.innerHTML = `<td>${name}</td><td>${mapei}</td><td>${tanggalPinjam}</td><td>${tanggalKembali}</td>`;
+            
+            alert('Data peminjaman berhasil ditambahkan ke tabel!');
+            this.reset();
+        });
+    </script>
+
+</body>
+</html>

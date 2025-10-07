@@ -5,11 +5,11 @@ body {
     padding: 20px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     min-height: 100vh;
 }
 
-
+/* Container untuk halaman Login/Register */
 .container {
     max-width: 450px;
     width: 100%;
@@ -20,7 +20,7 @@ body {
     text-align: center;
 }
 
-
+/* Container untuk halaman Pinjam (lebih lebar) & Informasi Buku */
 .container-main {
     max-width: 900px;
     width: 100%;
@@ -38,33 +38,40 @@ body {
     margin-bottom: 30px;
 }
 
-
+/* Tombol Navigasi Pojok Kanan Atas */
 .top-nav {
     position: absolute;
     top: 20px;
     right: 30px;
     z-index: 10;
+    display: flex; /* Tambahkan ini untuk menata tautan */
+    gap: 10px; /* Jarak antar tautan */
 }
 
 .top-nav a {
     text-decoration: none;
     padding: 8px 15px;
-    margin-left: 10px;
     border-radius: 4px;
     font-weight: bold;
     color: white;
+    white-space: nowrap; /* Mencegah teks pecah baris */
 }
 
+/* Warna tombol */
+.btn-info {
+    background-color: #ffc107; /* Kuning untuk Info */
+    color: #333;
+}
 .btn-login {
-    background-color: #007bff; 
+    background-color: #007bff; /* Biru untuk Login */
 }
 
 .btn-register {
-    background-color: #5cb85c; 
+    background-color: #5cb85c; /* Hijau untuk Daftar */
 }
 
 
-
+/* Styling Formulir Pinjam */
 .loan-form-container {
     border: 1px solid #ccc;
     padding: 20px;
@@ -122,7 +129,7 @@ table th {
     background-color: #f2f2f2;
 }
 
-
+/* Styling Login/Register Form */
 .form-link {
     display: block;
     margin-top: 20px;

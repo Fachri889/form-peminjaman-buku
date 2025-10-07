@@ -11,6 +11,8 @@
     <div class="container-main">
         
         <div class="top-nav">
+            <a href="informasi_buku.html" class="btn-info">INFO BUKU</a>
+            
             <a href="login.html" class="btn-login">LOGIN</a>
             <a href="register.html" class="btn-register">DAFTAR</a>
         </div>
@@ -21,7 +23,7 @@
             <form id="pinjam-form">
                 <label for="name">Name:</label>
                 <input type="text" id="name" required>
-                <label for="mapei">Judul Buku/Mapel:</label>
+                <label for="mapei">Mapei (Judul Buku/Mapel):</label>
                 <input type="text" id="mapei" required>
                 <label for="tanggal-pinjam">Tanggal Pinjam:</label>
                 <input type="date" id="tanggal-pinjam" required>
@@ -44,31 +46,11 @@
                     </tr>
                 </thead>
                 <tbody id="data-pinjaman-body">
-                    <tr><td>Ridho</td><td>Matematika</td><td>2025-01-01</td><td>2025-01-08</td></tr>
+                    <tr><td>Contoh Data</td><td>Matematika</td><td>2025-01-01</td><td>2025-01-08</td></tr>
                 </tbody>
             </table>
         </div>
     </div>
-
-    <script>
-        document.getElementById('pinjam-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            
-            const name = document.getElementById('name').value;
-            const mapei = document.getElementById('mapei').value;
-            const tanggalPinjam = document.getElementById('tanggal-pinjam').value;
-            const tanggalKembali = document.getElementById('tanggal-kembali').value;
-
-            
-            const tableBody = document.getElementById('data-pinjaman-body');
-            const newRow = tableBody.insertRow(0); 
-            newRow.innerHTML = `<td>${name}</td><td>${mapei}</td><td>${tanggalPinjam}</td><td>${tanggalKembali}</td>`;
-            
-            alert('Data peminjaman berhasil ditambahkan ke tabel!');
-            this.reset();
-        });
-    </script>
 
 </body>
 </html>
